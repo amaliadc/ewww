@@ -23,7 +23,7 @@ public class CustomDaftarMenuAdapter extends ArrayAdapter<DaftarMenu> {
             DaftarMenu daftarmenu = getItem(position);
 
             if(convertView == null){
-                convertView = LayoutInflater.from(getContext()).inflate(R.layout.ListItem, parent, false);
+                convertView = LayoutInflater.from(getContext()).inflate(R.layout.listitemmenu, parent, false);
             }
 
             TextView makanan = (TextView) convertView.findViewById(R.id.DaftarMenuMakanan);
