@@ -2,16 +2,31 @@ package com.kelompokamalia.diburjoin;
 
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ListView;
+
+import java.util.ArrayList;
 
 
-public class MainActivity extends ActionBarActivity {
+public class MainActivity extends AppCompatActivity {
+    ListView listdaftarMenu;
+
+    ArrayList<DaftarMenu> arraymenu = DaftarMenu.getDaftarMenus();
+    CustomDaftarMenuAdapter adapter;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        listdaftarMenu = (ListView) findViewById(R.id.listView_output);
+        adapter = new CustomDaftarMenuAdapter(this, arraymenu);
+
+        final ListView listView = (ListView) findViewById(R.id.listView_output);
+        listView.setAdapter(adapter);
     }
 
 
